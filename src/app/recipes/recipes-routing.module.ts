@@ -8,6 +8,13 @@ const routes: Routes = [
     path: '',
     component: RecipesPage,
   },
+  {
+    path: ':recipeId',
+    loadChildren: () =>
+      import('./recipes-details/recipes-details.module').then(
+        (m) => m.RecipesDetailsPageModule
+      ),
+  },
 ];
 
 @NgModule({
